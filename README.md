@@ -1,2 +1,3 @@
-# convertdoc_bot
-Telegram bot for convert documents format
+# Converter Doc Bot
+
+Telegram Bot for convert documents to PDF format
