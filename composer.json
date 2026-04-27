@@ -13,14 +13,17 @@
   "keywords": [
     "telegram",
     "bot",    
-    "unoserver"
+    "unoserver",
+    "convert",
+    "doc",
+    "pdf"
   ],
   "require": {
     "php": ">=8.0",
-    "pwsdotru/unoserver-client": "*",
-    "telegram-bot/api": "*",
     "ext-xmlrpc": "*",
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "pwsdotru/unoserver-client": "*",
+    "telegram-bot/api": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.5.* || 3.6.*"
