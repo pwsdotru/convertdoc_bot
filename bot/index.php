@@ -1,11 +1,14 @@
 <?php
 
-require_once "vendor/autoload.php";
+require_once(dirname(__DIR__) . "vendor/autoload.php");
 
 use TelegramBot\Api\Client;
+use TelegramBot\Api\Exception;
+use function parse_ini_file;
 
 try {
-    $bot = new Client('YOUR_BOT_API_TOKEN', 'YOUR_BOTAN_TRACKER_API_KEY');
+    $config = parse_ini_file(__DIR__ . "/config.ini");
+    $bot = new Client($config["TOKEN"]);
 
     $bot->command('start', function ($message) use ($bot) {
             $bot->sendMessage(
@@ -15,6 +18,6 @@ try {
     });
 
     $bot->run();
-} catch (\TelegramBot\Api\Exception $e) {
+} catch (Exception $e) {
     $e->getMessage();
 }
