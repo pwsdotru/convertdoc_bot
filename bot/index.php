@@ -1,10 +1,9 @@
 <?php
 
-require_once(dirname(__DIR__) . "vendor/autoload.php");
+require_once(dirname(__DIR__) . "/vendor/autoload.php");
 
 use TelegramBot\Api\Client;
 use TelegramBot\Api\Exception;
-use function parse_ini_file;
 
 try {
     $config = parse_ini_file(__DIR__ . "/config.ini");
@@ -19,5 +18,6 @@ try {
 
     $bot->run();
 } catch (Exception $e) {
-    $e->getMessage();
+    printf("Exception: %s\n\n", $e->getMessage());
+    exit(1);
 }
